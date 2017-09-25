@@ -1,6 +1,6 @@
 Name:           way-cooler
 Version:        0.6.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Customizable Wayland compositor (window manager) 
 
 License:        MIT
@@ -17,6 +17,8 @@ BuildRequires:  rust-packaging
 Requires:       dbus
 Requires:       wlc
 Recommends:     way-cooler-bg
+Recommends:     way-cooler-lock
+Recommends:     way-cooler-grab
 
 %description
 Way Cooler is a customizable tiling window manager written in Rust for Wayland 
@@ -31,6 +33,7 @@ extensibility of awesome.
 
 %install
 %cargo_install
+cd %{_builddir}/%{name}-%{version}
 mkdir -p %{buildroot}/%{_datadir}/wayland-sessions
 cp -p %{name}.desktop %{buildroot}/%{_datadir}/wayland-sessions
 mkdir -p %{buildroot}/%{_sysconfdir}/%{name}
@@ -45,5 +48,5 @@ cp -p config/init.lua %{buildroot}/%{_sysconfdir}/%{name}
 %license LICENSE
 
 %changelog
-* Thu Sep 21 2017 Hendrik Schröter <hendrik.m.schroeter@fau.de> 0.6.2-1
+* Thu Sep 21 2017 Hendrik Schröter <hendrik.m.schroeter@fau.de> 0.6.2-2
 - Initial version of the package
