@@ -1,6 +1,6 @@
 Name:           way-cooler-bg
 Version:        0.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        The program that draws a background for Way Cooler
 
 License:        MIT
@@ -22,7 +22,7 @@ Requires:       gtk3
 Supplements:    way-cooler
 
 %description
-%{Summary}
+%{summary}
 
 %prep
 %autosetup -n %{name}-%{version}
@@ -39,5 +39,5 @@ Supplements:    way-cooler
 %doc README.md
 
 %changelog
-* Thu Sep 21 2017 Hendrik Schröter <hendrik.m.schroeter@fau.de> 0.2.1-1
+* Thu Sep 21 2017 Hendrik Schröter <hendrik.m.schroeter@fau.de> 0.2.1-2
 - Initial version of the package
